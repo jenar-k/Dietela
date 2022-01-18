@@ -26,7 +26,7 @@
 
 
 
-
+// Halaman Landing Page
 Cypress.Commands.add('landingPageDietela', () => {
     cy.visit('https://dietela.web.project.skyshi.io/#/');
     cy.viewport(1280, 800);
@@ -39,6 +39,7 @@ Cypress.Commands.add('landingPageDietela', () => {
 })
 
 
+// Halaman Login
 Cypress.Commands.add('loginPageDietela', () => {
     cy.visit('https://dietela.web.project.skyshi.io/#/login');
     cy.viewport(1280, 800);
@@ -58,6 +59,7 @@ Cypress.Commands.add('loginPageDietela', () => {
 })
 
 
+// Halaman Register
 Cypress.Commands.add('registerPageDietela', () => {
     cy.visit('https://dietela.web.project.skyshi.io/#/register');
     cy.viewport(1280, 800);
@@ -69,6 +71,20 @@ Cypress.Commands.add('registerPageDietela', () => {
 
 })
 
+
+// Halaman Lupa Password
+Cypress.Commands.add('forgotPasswordPageDietela', () => {
+    cy.visit('https://dietela.web.project.skyshi.io/#/forgot-password');
+    cy.viewport(1280, 800);
+    cy.url()
+        .should('include', 'https://dietela.web.project.skyshi.io/#/forgot-password');
+    cy.get('[class="css-1qvfifl"]')
+        .should ('have.text', ' Lupa Password ')
+        .should('exist')
+    cy.get('[id="email"]')
+        .should('exist')
+
+})
 
 // Klien
 Cypress.Commands.add('emailKlienValid', () => {
@@ -166,6 +182,57 @@ Cypress.Commands.add('passwordSATidakValid', () => {
 })
 
 
+// Email Klien Ubah Password
+Cypress.Commands.add('emailKlienForgotPassValid', () => {
+    cy.get('[id="email"]')
+        .type('je.perseorangan2@gmail.com')
+        .should('have.value', 'je.perseorangan2@gmail.com');
+
+})
+
+
+Cypress.Commands.add('emailKlienForgotPassTidakValid', () => {
+    cy.get('[id="email"]')
+        .type('emailforgotnotvalid@gmail.com')
+        .should('have.value', 'emailforgotnotvalid@gmail.com');
+
+})
+
+
+// Email Ahli Gizi Ubah Password
+Cypress.Commands.add('emailAGForgotPassValid', () => {
+    cy.get('[id="email"]')
+        .type('emailahligizivalid@gmail.com')
+        .should('have.value', 'emailahligizivalid@gmail.com');
+
+})
+
+
+Cypress.Commands.add('emailAGForgotPassTidakValid', () => {
+    cy.get('[id="email"]')
+        .type('emailahligizinotvalid@gmail.com')
+        .should('have.value', 'emailahligizinotvalid@gmail.com');
+
+})
+
+
+// Email Super Admin Ubah Password
+Cypress.Commands.add('emailSAForgotPassValid', () => {
+    cy.get('[id="email"]')
+        .type('emailsuperadminvalid@gmail.com')
+        .should('have.value', 'emailsuperadminvalid@gmail.com');
+
+})
+
+
+Cypress.Commands.add('emailSAForgotPassTidakValid', () => {
+    cy.get('[id="email"]')
+        .type('emailsuperadminnotvalid@gmail.com')
+        .should('have.value', 'emailsuperadminnotvalid@gmail.com');
+
+})
+
+
 // Login Klien
 Cypress.Commands.add('tombolLogin', () => {
     cy.get('[class="css-1c0kz4a"]')
@@ -197,7 +264,7 @@ Cypress.Commands.add('tombolLoginSA', () => {
 })
 
 
-
+// Logout
 Cypress.Commands.add('tombolLogout', () => {
     cy.get('[class="css-14gmh54"]')
         .click();
