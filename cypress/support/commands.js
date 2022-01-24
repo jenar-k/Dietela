@@ -202,8 +202,8 @@ Cypress.Commands.add('emailKlienForgotPassTidakValid', () => {
 // Email Ahli Gizi Ubah Password
 Cypress.Commands.add('emailAGForgotPassValid', () => {
     cy.get('[id="email"]')
-        .type('emailahligizivalid@gmail.com')
-        .should('have.value', 'emailahligizivalid@gmail.com');
+        .type('iniakunahligizidietela@gmail.com')
+        .should('have.value', 'iniakunahligizidietela@gmail.com');
 
 })
 

@@ -1,4 +1,4 @@
-describe('Super Admin Menggunakan Fitur Lupa Password Dietela', () => {
+/* describe('Super Admin Menggunakan Fitur Lupa Password Dietela', () => {
     it('Ahli Gizi menggunakan fitur lupa password Dietela dengan data Email yang Valid', () => {
         cy.forgotPasswordPageDietela();
         cy.emailAGForgotPassValid();
@@ -27,4 +27,4 @@ describe('Super Admin Menggunakan Fitur Lupa Password Dietela', () => {
             .should('be.disabled')
     })
 
-})
+}) */
